@@ -21,6 +21,8 @@ const form = reactive({
 })
 
 const submitted = ref(false)
+const submitting = ref(false)
+const submitError = ref(false)
 
 const toolOptions = ['Facebook Ads', 'Google Ads', 'SMM', 'Banner reklama']
 const serviceOptions = ['SMM', 'Target reklamasi', 'Kompleks marketing', 'Avtomatizatsiya', 'Branding', 'IT xizmatlar']
@@ -52,12 +54,28 @@ onBeforeUnmount(() => {
   document.body.style.overflow = ''
 })
 
-function handleSubmit() {
+async function handleSubmit() {
   if (!form.name.trim() || !form.phone.trim()) return
+  submitting.value = true
+  submitError.value = false
+
+  try {
+    const res = await fetch('/.netlify/functions/telegram', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ ...form })
+    })
+    if (!res.ok) throw new Error('request failed')
+  } catch (err) {
+    console.error('Ariza yuborishda xatolik:', err)
+    submitError.value = true
+  }
+
+  submitting.value = false
   submitted.value = true
   setTimeout(() => {
     closeModal()
-  }, 1400)
+  }, 1600)
 }
 </script>
 
@@ -147,8 +165,10 @@ function handleSubmit() {
           </div>
         </div>
 
-        <button type="submit" class="btn btn-primary qsubmit" :disabled="submitted">
-          {{ submitted ? (currentLang === 'ru' ? 'Заявка отправлена ✓' : 'Ariza yuborildi ✓') : tr.qSubmit }}
+        <button type="submit" class="btn btn-primary qsubmit" :disabled="submitted || submitting">
+          <template v-if="submitted">{{ submitError ? (currentLang === 'ru' ? 'Отправлено (проверьте связь) ✓' : 'Yuborildi (aloqani tekshiring) ✓') : (currentLang === 'ru' ? 'Заявка отправлена ✓' : 'Ariza yuborildi ✓') }}</template>
+          <template v-else-if="submitting">{{ currentLang === 'ru' ? 'Отправка...' : 'Yuborilmoqda...' }}</template>
+          <template v-else>{{ tr.qSubmit }}</template>
         </button>
         <a href="tel:+998918118181" class="call-link" v-html="tr.qCall"></a>
       </form>
