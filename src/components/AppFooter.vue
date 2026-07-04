@@ -30,8 +30,7 @@ import { tr } from '../i18n.js'
         <div>
           <h4>{{ tr.footContacts }}</h4>
           <ul>
-            <li class="mono">+998 77 100-20-30</li>
-            <li class="mono">+998 55 200-10-40</li>
+            <li class="mono"><a href="tel:+998918118181">+998 91 811 81 81</a></li>
             <li>hello@spektor.agency</li>
             <li>{{ tr.footAddr }}</li>
           </ul>

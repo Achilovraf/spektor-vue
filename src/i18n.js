@@ -1,16 +1,16 @@
 import { ref, computed } from 'vue'
 
-export const currentLang = ref('ru')
+export const currentLang = ref('uz')
 
 export const dict = {
     ru:{
       nav1:"Услуги", nav2:"Кейсы", nav3:"Как работаем", nav4:"Тарифы", nav5:"Отзывы", nav6:"Вопросы", navCta:"Заявка на аудит", navAbout:"О нас",
       heroEyebrow:"Партнёр по росту для B2B · с 2016 года",
-      heroH1:'Увеличьте продажи до <span class="accent">70%</span> за <span class="accent">42 дня</span>',
+      heroH1:'Увеличьте продажи до <span class="accent">70%</span> за <span class="accent">30 дней</span>',
       heroLede:"Spector строит для B2B-компаний полный контур: сайт, трафик, CRM и колл-центр в одной системе — с понятной отчётностью на каждом шаге.",
       heroBtn1:"Записаться на встречу", heroBtn2:"Наши клиенты",
       proof1:"Продавайте больше, чем вчера!",
-      proof2:"Не нужно долго раздумывать — это гарантия",
+      proof2:"Не нужно долго раздумывать",
       proof3:"Если продажи не вырастут — вернём 100% стоимости услуг",
       proofLbl:"Отрасли, с которыми мы работаем",
       chip1:"Опт и дистрибуция", chip2:"Производство", chip3:"Логистика", chip4:"Недвижимость", chip5:"Ритейл-сети", chip6:"B2B-услуги",
@@ -94,16 +94,26 @@ export const dict = {
       ind5Name:"Ритейл-сети", ind5Desc:"Маркетинг, увеличивающий трафик и число постоянных клиентов сети магазинов",
       ind6Name:"B2B-услуги", ind6Desc:"Генерация лидов и выстраивание долгосрочных партнёрств для B2B-компаний",
       clientsEyebrow:"Наши клиенты", clientsH2:"С кем мы работаем", clientsP:"Бренды, которые доверяют нам свой рост и развитие",
-      clientsStrip:"Нам доверяют бренды, которые растут вместе с нами"
+      clientsStrip:"Нам доверяют бренды, которые растут вместе с нами",
+      projEyebrow:"Проекты", projH2:"Некоторые из наших проектов",
+      projP:"Реальные примеры того, как мы выстраиваем маркетинг для разных ниш",
+      proj1Name:"Elite Dairy", proj1Tag:"SMM и таргетированная реклама", proj1Duration:"6 месяцев",
+      proj1Desc:"Вели соцсети бренда и настроили таргетированную рекламу для Elite Dairy. За время сотрудничества выросла узнаваемость бренда и количество онлайн-заказов.",
+      proj2Name:"Alskom", proj2Tag:"Таргет, SMM и контекстная реклама", proj2Duration:"5 месяцев",
+      proj2Desc:"Для страховой компании Alskom запустили таргет, SMM и контекстную рекламу. Количество обращений стабильно росло на протяжении всего периода работы.",
+      proj3Name:"Startup Yo'li", proj3Tag:"Комплексный маркетинг и брендинг", proj3Duration:"4 месяца",
+      proj3Desc:"Для проекта Startup Yo'li реализовали комплексную маркетинговую стратегию для роста узнаваемости бренда и привлечения целевой аудитории.",
+      proj4Name:"Rapid Generators", proj4Tag:"Реклама в Facebook и Google Ads", proj4Duration:"5 месяцев",
+      proj4Desc:"Для Rapid Generators вели рекламные кампании в Facebook и Google Ads. В результате выросла база клиентов и количество обращений."
     },
     uz:{
       nav1:"Xizmatlar", nav2:"Keyslar", nav3:"Qanday ishlaymiz", nav4:"Tariflar", nav5:"Fikrlar", nav6:"Savollar", navCta:"Auditga yozilish", navAbout:"Biz haqimizda",
       heroEyebrow:"B2B uchun o'sish hamkori · 2016 yildan beri",
-      heroH1:'<span class="accent">42 kun</span> ichida savdolaringizni <span class="accent">70% gacha</span> oshiring!',
+      heroH1:'<span class="accent">30 kun</span> ichida savdolaringizni <span class="accent">70% gacha</span> oshiring!',
       heroLede:"Spector B2B kompaniyalar uchun to'liq tizim quradi: sayt, trafik, CRM va call-markaz bitta tizimda — har bosqichda tushunarli hisobot bilan.",
       heroBtn1:"Uchrashuvga yozilish", heroBtn2:"Bizning mijozlarimiz",
       proof1:"Kechagidan ko'proq soting!",
-      proof2:"Oylab o'tirishga hojat yo'q deb nomlangan GARANTIYA",
+      proof2:"Oylab o'tirishga hojat yo'q deymiz",
       proof3:"Savdo hajmi yaxshi tarafga o'zgarmasa, xizmat pulini 100% qaytaramiz!",
       proofLbl:"Biz ishlaydigan sohalar",
       chip1:"Ulgurji va distributsiya", chip2:"Ishlab chiqarish", chip3:"Logistika", chip4:"Ko'chmas mulk", chip5:"Reyteyl tarmoqlari", chip6:"B2B xizmatlar",
@@ -187,7 +197,17 @@ export const dict = {
       ind5Name:"Reyteyl tarmoqlari", ind5Desc:"Do'konlar tarmog'i uchun trafik va doimiy mijozlar sonini oshiruvchi marketing",
       ind6Name:"B2B xizmatlar", ind6Desc:"B2B kompaniyalar uchun uzoq muddatli hamkorlik va lidlar generatsiyasi",
       clientsEyebrow:"Bizning mijozlarimiz", clientsH2:"Biz kim bilan ishlaymiz", clientsP:"O'z o'sishi va rivojlanishini bizga ishonib topshirgan brendlar",
-      clientsStrip:"Biz bilan birga o'sayotgan brendlar bizga ishonishadi"
+      clientsStrip:"Biz bilan birga o'sayotgan brendlar bizga ishonishadi",
+      projEyebrow:"Loyihalar", projH2:"Ba'zi loyihalarimiz",
+      projP:"Turli sohalar uchun marketingni qanday qurishimizga real misollar",
+      proj1Name:"Elite Dairy", proj1Tag:"SMM va target reklama", proj1Duration:"6 oy",
+      proj1Desc:"Elite Dairy brendi uchun ijtimoiy tarmoqlarni yuritdik va target reklamani sozladik. Hamkorlik davomida brend tanilishi va onlayn buyurtmalar soni oshdi.",
+      proj2Name:"Alskom", proj2Tag:"Target, SMM va kontekst reklama", proj2Duration:"5 oy",
+      proj2Desc:"Alskom sug'urta kompaniyasi uchun target, SMM va kontekst reklama xizmatlarini taqdim etdik. Ish davomida murojaatlar soni barqaror oshib bordi.",
+      proj3Name:"Startup Yo'li", proj3Tag:"Kompleks marketing va brending", proj3Duration:"4 oy",
+      proj3Desc:"Startup Yo'li loyihasi uchun brend tanilishini oshirish va maqsadli auditoriyani jalb qilish maqsadida kompleks marketing strategiyasini amalga oshirdik.",
+      proj4Name:"Rapid Generators", proj4Tag:"Facebook va Google Ads", proj4Duration:"5 oy",
+      proj4Desc:"Rapid Generators uchun Facebook va Google Ads orqali reklama kampaniyalarini yuritdik. Natijada mijozlar bazasi va murojaatlar soni sezilarli oshdi."
     }
 }
 
