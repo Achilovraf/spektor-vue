@@ -11,23 +11,12 @@ const form = reactive({
   name: '',
   phone: '',
   bizType: '',
-  insta: '',
-  tools: [],
-  budget: '',
-  sales: '',
-  salesCount: '',
-  service: [],
-  role: ''
+  budget: ''
 })
 
 const submitted = ref(false)
 const submitting = ref(false)
 const submitError = ref(false)
-
-const toolOptions = ['Facebook Ads', 'Google Ads', 'SMM', 'Banner reklama']
-const serviceOptions = ['SMM', 'Target reklamasi', 'Kompleks marketing', 'Avtomatizatsiya', 'Branding', 'IT xizmatlar']
-const serviceLabelKeys = ['qSv1', 'qSv2', 'qSv3', 'qSv4', 'qSv5', 'qSv6']
-const toolLabelKeys = ['qTool1', 'qTool2', 'qTool3', 'qTool4']
 
 function closeModal() {
   emit('close')
@@ -96,71 +85,21 @@ async function handleSubmit() {
         <input v-model="form.name" type="text" :placeholder="tr.qNamePh" required />
         <input v-model="form.phone" type="tel" placeholder="+998 91 234 45 67" required />
         <input v-model="form.bizType" type="text" :placeholder="tr.qBizTypePh" required />
-        <input v-model="form.insta" type="text" :placeholder="tr.qInstaPh" />
-
-        <div class="qgroup">
-          <div class="qgroup-title">{{ tr.qTools }}</div>
-          <div class="qoptions">
-            <label v-for="(opt, i) in toolOptions" :key="opt" class="qopt">
-              <input v-model="form.tools" type="checkbox" :value="opt" />
-              <span>{{ tr[toolLabelKeys[i]] }}</span>
-            </label>
-          </div>
-        </div>
 
         <div class="qgroup">
           <div class="qgroup-title">{{ tr.qBudget }}</div>
           <div class="qoptions">
             <label class="qopt">
-              <input v-model="form.budget" type="radio" value="Ha" name="budget" />
-              <span>{{ tr.yesLabel }}</span>
+              <input v-model="form.budget" type="radio" value="500$" name="budget" />
+              <span>500$</span>
             </label>
             <label class="qopt">
-              <input v-model="form.budget" type="radio" value="Yo'q" name="budget" />
-              <span>{{ tr.noLabel }}</span>
-            </label>
-          </div>
-        </div>
-
-        <div class="qgroup">
-          <div class="qgroup-title">{{ tr.qSales }}</div>
-          <div class="qoptions">
-            <label class="qopt">
-              <input v-model="form.sales" type="radio" value="Mavjud emas" name="sales" />
-              <span>{{ tr.qSalesNo }}</span>
-            </label>
-            <label class="qopt has-input">
-              <input v-model="form.sales" type="radio" value="Mavjud" name="sales" />
-              <span>{{ tr.qSalesYes }}</span>
-              <input v-model="form.salesCount" type="text" class="mini-input" placeholder="son" />
-            </label>
-          </div>
-        </div>
-
-        <div class="qgroup">
-          <div class="qgroup-title">{{ tr.qService }}</div>
-          <div class="qoptions">
-            <label v-for="(opt, i) in serviceOptions" :key="opt" class="qopt">
-              <input v-model="form.service" type="checkbox" :value="opt" />
-              <span>{{ tr[serviceLabelKeys[i]] }}</span>
-            </label>
-          </div>
-        </div>
-
-        <div class="qgroup">
-          <div class="qgroup-title">{{ tr.qRole }}</div>
-          <div class="qoptions">
-            <label class="qopt">
-              <input v-model="form.role" type="radio" value="Asoschi" name="role" />
-              <span>{{ tr.qRole1 }}</span>
+              <input v-model="form.budget" type="radio" value="1000$" name="budget" />
+              <span>1000$</span>
             </label>
             <label class="qopt">
-              <input v-model="form.role" type="radio" value="Boshqaruvchi" name="role" />
-              <span>{{ tr.qRole2 }}</span>
-            </label>
-            <label class="qopt">
-              <input v-model="form.role" type="radio" value="Marketolog" name="role" />
-              <span>{{ tr.qRole3 }}</span>
+              <input v-model="form.budget" type="radio" value="1500$" name="budget" />
+              <span>1500$</span>
             </label>
           </div>
         </div>

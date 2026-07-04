@@ -24,20 +24,13 @@ export async function handler(event) {
     return { statusCode: 400, body: JSON.stringify({ error: 'Noto\'g\'ri so\'rov' }) }
   }
 
-  const list = (v) => (Array.isArray(v) && v.length ? v.join(', ') : '—')
-
   const text = [
     '🆕 Yangi ariza — SPEKTOR.',
     '',
     `👤 Ism: ${data.name || '—'}`,
     `📞 Telefon: ${data.phone || '—'}`,
     `🏢 Biznes turi: ${data.bizType || '—'}`,
-    `📷 Instagram: ${data.insta || '—'}`,
-    `🛠 Avval foydalangan vositalar: ${list(data.tools)}`,
-    `💰 Byudjet 1000$dan yuqorimi: ${data.budget || '—'}`,
-    `📊 Sotuv bo'limi: ${data.sales || '—'}${data.salesCount ? ' (' + data.salesCount + ' operator)' : ''}`,
-    `🎯 Qiziqqan xizmat: ${list(data.service)}`,
-    `🧑‍💼 Lavozim: ${data.role || '—'}`
+    `💰 Byudjet: ${data.budget || '—'}`
   ].join('\n')
 
   try {
