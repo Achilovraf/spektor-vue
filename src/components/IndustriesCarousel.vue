@@ -6,8 +6,8 @@ import { tr } from '../i18n.js'
 // (.jpg o'rniga .png yoki .webp ishlatmoqchi bo'lsangiz, shu yerdagi nomlarni ham o'zgartiring)
 const industries = [
   { image: '/industries/wholesale.jpg', nameKey: 'ind1Name', descKey: 'ind1Desc' },
-  { image: '/industries/manufacturing.jpg', nameKey: 'ind2Name', descKey: 'ind2Desc' },
-  { image: '/industries/logistics.jpg', nameKey: 'ind3Name', descKey: 'ind3Desc' },
+  { image: '/industries/manufacturing.jpeg', nameKey: 'ind2Name', descKey: 'ind2Desc' },
+  { image: '/industries/logistics.png', nameKey: 'ind3Name', descKey: 'ind3Desc' },
   { image: '/industries/realestate.jpg', nameKey: 'ind4Name', descKey: 'ind4Desc' },
   { image: '/industries/retail.jpg', nameKey: 'ind5Name', descKey: 'ind5Desc' },
   { image: '/industries/b2b.jpg', nameKey: 'ind6Name', descKey: 'ind6Desc' }
